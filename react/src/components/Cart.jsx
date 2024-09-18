@@ -6,8 +6,7 @@ import { connect } from 'react-redux';
 import { setProducts, addProduct, removeProduct } from '../actions';
 
 function Cart({ cart, removeProduct, addProduct }) {
-  const cartLoadSpan = Sentry.startInactiveSpan({ name: "items_added_to_cart", op: "function"});
-  cartLoadSpan.end();
+  Sentry.startInactiveSpan({ name: "items_added_to_cart", op: "function"}).end();
   return (
     <div className="cart-container">
       <h2 className="sentry-unmask">Cart</h2>
