@@ -43,7 +43,7 @@ function Checkout({ backend, rageclick, cart }) {
   async function checkout(cart, checkout_span) {
     const itemsInCart = countItemsInCart(cart);
     checkout_span.setAttribute("checkout.click", 1);
-    checkout_span.setAttribute("items_bought", itemsInCart)
+    checkout_span.setAttribute("items_at_checkout", itemsInCart)
     const stopMeasurement = measureRequestDuration('/checkout');
     const response = await fetch(backend + '/checkout?v2=true', {
       method: 'POST',
